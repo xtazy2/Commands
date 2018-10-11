@@ -1,0 +1,126 @@
+{
+  "name": "report",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "JKSNh",
+  "actions": [
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "16",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "reporteduser",
+      "name": "Store Member Info"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "information",
+      "name": "Store Command Params"
+    },
+    {
+      "title": "**REPORT**",
+      "author": "",
+      "color": "RED",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "reportedmsg",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "reportedmsg",
+      "message": "\n• **Reported User** => ${tempVars(\"reporteduser\")}\n• **Info** => ${tempVars(\"information\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "reportedmsg",
+      "message": "Report by ${tempVars(\"username\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+        "storage": "1",
+        "varName": "reportedmsg",
+        "channel": "6",
+        "varName2": "report-channel",
+        "storage3": "0",
+        "varName3": "",
+        "name": "Send Embed Message"
+      },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "We send your **report** to the Support Team.",
+      "storage": "1",
+      "varName2": "sendmsg",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "sendmsg",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "lastmsg",
+      "name": "Store Channel Info"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Please use `!report @user [text]`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ]
+}
