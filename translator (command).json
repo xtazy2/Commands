@@ -1,0 +1,118 @@
+{
+    "name": "translate",
+    "permissions": "NONE",
+    "restriction": "1",
+    "actions": [
+      {
+        "condition": "0",
+        "comparison": "0",
+        "value": "2",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "2",
+        "iffalseVal": "13",
+        "name": "Check Parameters"
+      },
+      {
+        "info": "0",
+        "infoIndex": "1",
+        "storage": "1",
+        "varName": "lang",
+        "name": "Store Command Params"
+      },
+      {
+        "member": "0",
+        "varName": "",
+        "info": "6",
+        "storage": "1",
+        "varName2": "lastmsg",
+        "name": "Store Member Info"
+      },
+      {
+        "member": "0",
+        "varName": "",
+        "info": "3",
+        "storage": "1",
+        "varName2": "who",
+        "name": "Store Member Info"
+      },
+      {
+        "translateTo": "${tempVars(\"lang\")}",
+        "translateMessage": "${tempVars(\"lastmsg\")}",
+        "storage": "1",
+        "varName": "reply",
+        "name": "Translate"
+      },
+      {
+        "title": "Translation from **${tempVars(\"who\")}**",
+        "author": "",
+        "color": "RANDOM",
+        "timestamp": "false",
+        "url": "",
+        "authorIcon": "",
+        "imageUrl": "",
+        "thumbUrl": "",
+        "storage": "1",
+        "varName": "embed",
+        "name": "Create Embed Message"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "message": "Translated to `${tempVars(\"lang\")}`:",
+        "name": "Set Embed Description"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "Original Msg:",
+        "message": "`${tempVars(\"lastmsg\")}` |",
+        "inline": "0",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "fieldName": "Translated Msg:",
+        "message": "`${tempVars(\"reply\")}`",
+        "inline": "0",
+        "name": "Add Embed Field"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "message": "YourBot - Google API",
+        "footerIcon": "",
+        "name": "Set Embed Footer"
+      },
+      {
+        "storage": "1",
+        "varName": "embed",
+        "channel": "0",
+        "varName2": "",
+        "name": "Send Embed Message"
+      },
+      {
+        "name": "End Action Sequence"
+      },
+      {
+        "channel": "0",
+        "varName": "",
+        "message": "Please use `!translate [lang] [user]`. **NOTE**: [lang] --> Your Language. [user] --> Mention someone.",
+        "storage": "1",
+        "varName2": "example",
+        "name": "Send Message"
+      },
+      {
+        "time": "3",
+        "measurement": "1",
+        "name": "Wait"
+      },
+      {
+        "storage": "1",
+        "varName": "example",
+        "name": "Delete Message"
+      }
+    ],
+    "_id": "XTZys"
+  }
